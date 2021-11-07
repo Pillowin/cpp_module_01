@@ -6,13 +6,14 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:37:51 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/02 16:48:40 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/07 15:13:48 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <iostream>
 #include "Zombie.hpp"
+#include <stdint.h>
 
 /*
 **	

@@ -6,18 +6,13 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 21:28:54 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/04 23:17:30 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/07 17:15:19 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <iterator>
 #include "Karen.hpp"
-
-using std::begin;
-using std::end;
-using std::distance;
-using std::find;
+#include <stdint.h>
 
 /*
 **	Default constructor.
@@ -38,13 +33,12 @@ Karen::~Karen(void)
 */
 void	Karen::complain(std::string level)
 {
-	uint8_t	index;
-	std::string	s[5] = {
+	int8_t	i = -1;
+	std::string	s[4] = {
 		"DEBUG",
 		"INFO",
 		"WARNING",
-		"ERROR",
-		"UNKNOW"
+		"ERROR"
 	};
 	void (Karen::*f[4])(void) = {
 		&Karen::debug,
@@ -53,14 +47,20 @@ void	Karen::complain(std::string level)
 		&Karen::error
 	};
 
-	index = distance(s, find(begin(s), end(s), level));
-	switch (index) {
+	i += (level == s[0]) * 1
+		+ (level == s[1]) * 2
+		+ (level == s[2]) * 3
+		+ (level == s[3]) * 4;
+	switch (i) {
 		case 0:
 			(this->*f[0])();
+			__attribute__ ((fallthrough));
 		case 1:
 			(this->*f[1])();
+			__attribute__ ((fallthrough));
 		case 2:
 			(this->*f[2])();
+			__attribute__ ((fallthrough));
 		case 3:
 			(this->*f[3])();
 	}

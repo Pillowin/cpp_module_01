@@ -6,12 +6,13 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:37:51 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/02 17:03:06 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/07 15:14:26 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
+#include <cstdlib>
 
 int	main(void)
 {

@@ -6,13 +6,14 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:37:51 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/02 17:18:14 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/07 15:14:49 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
+#include <cstdlib>
 
 int	main(void)
 {

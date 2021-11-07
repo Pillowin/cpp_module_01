@@ -6,12 +6,14 @@
 /*   By: agautier <agautier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:37:51 by agautier          #+#    #+#             */
-/*   Updated: 2021/11/03 22:59:07 by agautier         ###   ########.fr       */
+/*   Updated: 2021/11/07 15:18:51 by agautier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.h"
 #include <sstream>
+#include <cstdlib>
+#include <cstdlib>
 
 int	main(int argc, char **argv)
 {
@@ -55,7 +57,7 @@ int	main(int argc, char **argv)
 
 	try {
 		outfile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-		outfile.open(std::string (argv[1]) + ".replace");
+		outfile.open((std::string (argv[1]) + ".replace").c_str());
 	} catch (std::ios_base::failure e) {
 		std::cerr
 			<< "Error while openning file \""
@@ -71,10 +73,10 @@ int	main(int argc, char **argv)
 	str = ss.str();
 	while (!str.empty())
 	{
-		if (!str.compare(0, strlen(argv[2]), argv[2]))
+		if (!str.compare(0, std::char_traits<char>::length(argv[2]), argv[2]))
 		{
 			outfile << argv[3];
-			str.erase(0, strlen(argv[2]));
+			str.erase(0, std::char_traits<char>::length(argv[2]));
 			continue ;
 		}
 		outfile << str.at(0);
