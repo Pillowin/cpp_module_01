@@ -16,7 +16,7 @@
 /*
 **	Default constructor.
 */
-Zombie::Zombie(const std::string name) : _name(name)
+Zombie::Zombie(std::string const &name) : _name(name)
 {
 }
 
@@ -35,7 +35,7 @@ Zombie::~Zombie(void)
 /*
 **	Zombie say its name.
 */
-void	Zombie::annonce(void)
+void	Zombie::annonce(void) const
 {
 	std::cout
 		<< this->_name

@@ -11,13 +11,20 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <sstream>
 #include <stdint.h>
 
 Zombie	*zombieHorde(int n, std::string name)
 {
 	Zombie *zs = new Zombie[n];
+	std::stringstream	ss;
 
 	for (uint8_t i = 0; i < n; i++)
-		zs[i].set_name(name + std::string (1, i));
+	{
+		ss << name;
+		ss << i;
+		ss >> name;
+		zs[i].set_name(name);
+	}
 	return (zs);
 }

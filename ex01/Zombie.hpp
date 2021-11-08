@@ -18,10 +18,10 @@
 class Zombie
 {
 	public:
-		Zombie(const std::string name = "Unnamed");
+		Zombie(std::string const &name = "Unnamed");
 		~Zombie(void);
 	
-		void	annonce(void);
+		void	annonce(void) const;
 		void	set_name(std::string name);
 
 	private:
